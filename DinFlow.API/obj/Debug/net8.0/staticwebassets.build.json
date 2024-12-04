@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "jgyRwQ1yGAkQStlt9O9w2PYr/jRuOC8AD/ygvRFYOg8=",
+  "Source": "DinFlow.API",
+  "BasePath": "_content/DinFlow.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
