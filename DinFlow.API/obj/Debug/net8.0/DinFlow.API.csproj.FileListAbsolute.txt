@@ -93,3 +93,5 @@ C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\obj\Debug\net8.0\refint\DinFl
 C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\obj\Debug\net8.0\DinFlow.API.pdb
 C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\obj\Debug\net8.0\DinFlow.API.genruntimeconfig.cache
 C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\obj\Debug\net8.0\ref\DinFlow.API.dll
+C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\bin\Debug\net8.0\DinFlow.API.xml
+C:\Users\SUPORTE\Documents\DinFlow.API\DinFlow.API\obj\Debug\net8.0\DinFlow.API.xml

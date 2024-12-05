@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DinFlow.API</name>
+    </assembly>
+    <members>
+        <member name="M:CategoriasController.GetAll">
+            <summary>
+            Retorna as categorias cadastradas.
+            </summary>
+            <returns>Detalhes da categoria.</returns>
+            <response code="200">Categoria encontrada.</response>
+            <response code="404">Categoria não encontrada.</response>
+        </member>
+        <member name="M:CategoriasController.GetById(System.Guid)">
+            <summary>
+            Retorna os detalhes de uma categoria específica.
+            </summary>
+            <param name="id">ID da categoria.</param>
+            <returns>Detalhes da categoria.</returns>
+            <response code="200">Categoria encontrada.</response>
+            <response code="404">Categoria não encontrada.</response>
+        </member>
+        <member name="M:CategoriasController.Post(DinFlow.API.Entities.Categoria)">
+            <summary>
+            Cadastra uma nova categoria.
+            </summary>
+            <param name="categoria">Dados da categoria.</param>
+            <returns>Categoria criada com sucesso.</returns>
+            <response code="201">A categoria foi criada com sucesso.</response>
+            <response code="400">Dados inválidos foram enviados na requisição.</response>
+            <response code="409">Já existe uma categoria com o mesmo nome.</response>
+        </member>
+        <member name="M:CategoriasController.Update(System.Guid,DinFlow.API.Entities.Categoria)">
+            <summary>
+            Atualiza uma categoria existente.
+            </summary>
+            <param name="id">ID da categoria a ser atualizada.</param>
+            <param name="input">Objeto com os dados atualizados da categoria.</param>
+            <response code="204">A categoria foi atualizada com sucesso.</response>
+            <response code="404">Nenhuma categoria encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:CategoriasController.Delete(System.Guid)">
+            <summary>
+            Exclui uma categoria específica pelo ID.
+            </summary>
+            <param name="id">ID da categoria a ser excluída.</param>
+            <response code="204">A categoria foi marcada como excluída com sucesso.</response>
+            <response code="404">Nenhuma categoria encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.DespesasController.GetAll">
+            <summary>
+            Retorna as categorias cadastradas.
+            </summary>
+            <returns>Detalhes da categoria.</returns>
+            <response code="200">Categoria encontrada.</response>
+            <response code="404">Categoria não encontrada.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.DespesasController.GetById(System.Guid)">
+            <summary>
+            Retorna os detalhes de uma categoria específica.
+            </summary>
+            <param name="id">ID da categoria.</param>
+            <returns>Detalhes da categoria.</returns>
+            <response code="200">Categoria encontrada.</response>
+            <response code="404">Categoria não encontrada.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.DespesasController.Post(DinFlow.API.Entities.Despesa)">
+            <summary>
+            Cadastra uma nova categoria.
+            </summary>
+            <param name="categoria">Dados da categoria.</param>
+            <returns>Categoria criada com sucesso.</returns>
+            <response code="201">A categoria foi criada com sucesso.</response>
+            <response code="400">Dados inválidos foram enviados na requisição.</response>
+            <response code="409">Já existe uma categoria com o mesmo nome.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.DespesasController.Update(System.Guid,DinFlow.API.Entities.Despesa)">
+            <summary>
+            Atualiza uma categoria existente.
+            </summary>
+            <param name="id">ID da categoria a ser atualizada.</param>
+            <param name="input">Objeto com os dados atualizados da categoria.</param>
+            <response code="204">A categoria foi atualizada com sucesso.</response>
+            <response code="404">Nenhuma categoria encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.DespesasController.Delete(System.Guid)">
+            <summary>
+            Exclui uma categoria específica pelo ID.
+            </summary>
+            <param name="id">ID da categoria a ser excluída.</param>
+            <response code="204">A categoria foi marcada como excluída com sucesso.</response>
+            <response code="404">Nenhuma categoria encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.GetAll">
+            <summary>
+            Retorna as despesas cadastradas.
+            </summary>
+            <returns>Detalhes da despesa.</returns>
+            <response code="200">despesa encontrada.</response>
+            <response code="404">despesa não encontrada.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.GetById(System.Guid)">
+            <summary>
+            Retorna os detalhes de uma despesa específica.
+            </summary>
+            <param name="id">ID da despesa.</param>
+            <returns>Detalhes da despesa.</returns>
+            <response code="200">despesa encontrada.</response>
+            <response code="404">despesa não encontrada.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.Post(DinFlow.API.Entities.Tag)">
+            <summary>
+            Cadastra uma nova despesa.
+            </summary>
+            <param name="despesa">Dados da despesa.</param>
+            <returns>despesa criada com sucesso.</returns>
+            <response code="201">A despesa foi criada com sucesso.</response>
+            <response code="400">Dados inválidos foram enviados na requisição.</response>
+            <response code="409">Já existe uma despesa com o mesmo nome.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.Update(System.Guid,DinFlow.API.Entities.Tag)">
+            <summary>
+            Atualiza uma despesa existente.
+            </summary>
+            <param name="id">ID da despesa a ser atualizada.</param>
+            <param name="input">Objeto com os dados atualizados da despesa.</param>
+            <response code="204">A despesa foi atualizada com sucesso.</response>
+            <response code="404">Nenhuma despesa encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.Delete(System.Guid)">
+            <summary>
+            Exclui uma despesa específica pelo ID.
+            </summary>
+            <param name="id">ID da despesa a ser excluída.</param>
+            <response code="204">A despesa foi marcada como excluída com sucesso.</response>
+            <response code="404">Nenhuma despesa encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.AddReceita(System.Guid,System.Guid)">
+            <summary>
+            Associa uma receita existente a uma tag específica.
+            </summary>
+            <param name="id">ID da tag que será associada à receita.</param>
+            <param name="receitaId">ID da receita que será associada à tag.</param>
+            <response code="204">Receita associada à tag com sucesso.</response>
+            <response code="404">A tag ou a receita especificada não foi encontrada.</response>
+            <response code="400">Dados inválidos ou inconsistentes foram enviados na requisição.</response>
+        </member>
+        <member name="M:DinFlow.API.Controllers.TagsController.AddDespesa(System.Guid,System.Guid)">
+            <summary>
+            Associa uma despesa existente a uma tag específica.
+            </summary>
+            <param name="id">ID da tag que será associada à despesa.</param>
+            <param name="despesaId">ID da despesa que será associada à tag.</param>
+            <response code="204">Despesa associada à tag com sucesso.</response>
+            <response code="404">A tag ou a despesa especificada não foi encontrada.</response>
+            <response code="400">Dados inválidos ou inconsistentes foram enviados na requisição.</response>
+        </member>
+        <member name="M:EconomiasController.GetAll">
+            <summary>
+            Retorna as Economias cadastradas.
+            </summary>
+            <returns>Detalhes das Economias.</returns>
+            <response code="200">Economia encontrada.</response>
+            <response code="404">Economia não encontrada.</response>
+        </member>
+        <member name="M:EconomiasController.GetById(System.Guid)">
+            <summary>
+            Retorna os detalhes de uma Economias específica.
+            </summary>
+            <param name="id">ID da Economias.</param>
+            <returns>Detalhes da Economias.</returns>
+            <response code="200">Economia encontrada.</response>
+            <response code="404">Economia não encontrada.</response>
+        </member>
+        <member name="M:EconomiasController.Post(DinFlow.API.Entities.Economia)">
+            <summary>
+            Cadastra uma nova economia.
+            </summary>
+            <param name="economia">Dados da economia.</param>
+            <returns>Receita criada com sucesso.</returns>
+            <response code="201">A economia foi criada com sucesso.</response>
+            <response code="400">Dados inválidos foram enviados na requisição.</response>
+            <response code="409">Já existe uma economia com o mesmo nome.</response>
+        </member>
+        <member name="M:EconomiasController.Update(System.Guid,DinFlow.API.Entities.Economia)">
+            <summary>
+            Atualiza uma economia existente.
+            </summary>
+            <param name="id">ID da economia a ser atualizada.</param>
+            <param name="input">Objeto com os dados atualizados da economia.</param>
+            <response code="204">A economia foi atualizada com sucesso.</response>
+            <response code="404">Nenhuma economia encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:EconomiasController.Delete(System.Guid)">
+            <summary>
+            Exclui uma economia específica pelo ID.
+            </summary>
+            <param name="id">ID da economia a ser excluída.</param>
+            <response code="204">A economia foi marcada como excluída com sucesso.</response>
+            <response code="404">Nenhuma economia encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:ReceitasController.GetAll">
+            <summary>
+            Retorna as receitas cadastradas.
+            </summary>
+            <returns>Detalhes da receita.</returns>
+            <response code="200">Receita encontrada.</response>
+            <response code="404">Receita não encontrada.</response>
+        </member>
+        <member name="M:ReceitasController.GetById(System.Guid)">
+            <summary>
+            Retorna os detalhes de uma receita específica.
+            </summary>
+            <param name="id">ID da receita.</param>
+            <returns>Detalhes da receita.</returns>
+            <response code="200">Receita encontrada.</response>
+            <response code="404">Receita não encontrada.</response>
+        </member>
+        <member name="M:ReceitasController.Post(DinFlow.API.Entities.Receita)">
+            <summary>
+            Cadastra uma nova receita.
+            </summary>
+            <param name="receita">Dados da receita.</param>
+            <returns>Receita criada com sucesso.</returns>
+            <response code="201">A receita foi criada com sucesso.</response>
+            <response code="400">Dados inválidos foram enviados na requisição.</response>
+            <response code="409">Já existe uma receita com o mesmo nome.</response>
+        </member>
+        <member name="M:ReceitasController.Update(System.Guid,DinFlow.API.Entities.Receita)">
+            <summary>
+            Atualiza uma receita existente.
+            </summary>
+            <param name="id">ID da receita a ser atualizada.</param>
+            <param name="input">Objeto com os dados atualizados da receita.</param>
+            <response code="204">A receita foi atualizada com sucesso.</response>
+            <response code="404">Nenhuma receita encontrada com o ID especificado.</response>
+        </member>
+        <member name="M:ReceitasController.Delete(System.Guid)">
+            <summary>
+            Exclui uma receita específica pelo ID.
+            </summary>
+            <param name="id">ID da receita a ser excluída.</param>
+            <response code="204">A receita foi marcada como excluída com sucesso.</response>
+            <response code="404">Nenhuma receita encontrada com o ID especificado.</response>
+        </member>
+    </members>
+</doc>

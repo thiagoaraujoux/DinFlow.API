@@ -1,3 +1,4 @@
+using System.Reflection;
 using DinFlow.API.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +20,12 @@ builder.Services.AddSwaggerGen(c =>
             {
                 Name = "API DINFLOW",
                 Email = "thiagoaraujo.unitins",
-                Url = new Uri("https://www.unitins.br/nPortal/")
+                Url = new Uri("https://thiagoaraujoux.github.io/")
             }
         });
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 var app = builder.Build();

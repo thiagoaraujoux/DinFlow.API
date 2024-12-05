@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Nosso Novo Título do Swagger",
-    "description": "Essa é a forma de fazermos uma nova descrição de nossa API",
+    "title": "DinFlow - API",
+    "description": "API com metodos para aplicação de controle financeiro",
     "contact": {
-      "name": "API de Eventos do Leandro",
+      "name": "API DINFLOW",
       "url": "https://www.unitins.br/nPortal/",
-      "email": "leandrogarcia@unitins.br"
+      "email": "thiagoaraujo.unitins"
     }
   },
   "paths": {
@@ -15,9 +15,13 @@
         "tags": [
           "Categorias"
         ],
+        "summary": "Retorna as categorias cadastradas.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Categoria encontrada."
+          },
+          "404": {
+            "description": "Categoria não encontrada."
           }
         }
       },
@@ -25,7 +29,9 @@
         "tags": [
           "Categorias"
         ],
+        "summary": "Cadastra uma nova categoria.",
         "requestBody": {
+          "description": "Dados da categoria.",
           "content": {
             "application/json": {
               "schema": {
@@ -47,6 +53,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "A categoria foi criada com sucesso."
+          },
+          "400": {
+            "description": "Dados inválidos foram enviados na requisição."
+          },
+          "409": {
+            "description": "Já existe uma categoria com o mesmo nome."
           }
         }
       }
@@ -56,10 +71,12 @@
         "tags": [
           "Categorias"
         ],
+        "summary": "Retorna os detalhes de uma categoria específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da categoria.",
             "required": true,
             "schema": {
               "type": "string",
@@ -69,7 +86,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Categoria encontrada."
+          },
+          "404": {
+            "description": "Categoria não encontrada."
           }
         }
       },
@@ -77,10 +97,12 @@
         "tags": [
           "Categorias"
         ],
+        "summary": "Atualiza uma categoria existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da categoria a ser atualizada.",
             "required": true,
             "schema": {
               "type": "string",
@@ -89,6 +111,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto com os dados atualizados da categoria.",
           "content": {
             "application/json": {
               "schema": {
@@ -110,6 +133,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A categoria foi atualizada com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma categoria encontrada com o ID especificado."
           }
         }
       },
@@ -117,10 +146,12 @@
         "tags": [
           "Categorias"
         ],
+        "summary": "Exclui uma categoria específica pelo ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da categoria a ser excluída.",
             "required": true,
             "schema": {
               "type": "string",
@@ -131,6 +162,173 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A categoria foi marcada como excluída com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma categoria encontrada com o ID especificado."
+          }
+        }
+      }
+    },
+    "/api/Despesas": {
+      "get": {
+        "tags": [
+          "Despesas"
+        ],
+        "summary": "Retorna as categorias cadastradas.",
+        "responses": {
+          "200": {
+            "description": "Categoria encontrada."
+          },
+          "404": {
+            "description": "Categoria não encontrada."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Despesas"
+        ],
+        "summary": "Cadastra uma nova categoria.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "A categoria foi criada com sucesso."
+          },
+          "400": {
+            "description": "Dados inválidos foram enviados na requisição."
+          },
+          "409": {
+            "description": "Já existe uma categoria com o mesmo nome."
+          }
+        }
+      }
+    },
+    "/api/Despesas/{id}": {
+      "get": {
+        "tags": [
+          "Despesas"
+        ],
+        "summary": "Retorna os detalhes de uma categoria específica.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da categoria.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria encontrada."
+          },
+          "404": {
+            "description": "Categoria não encontrada."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Despesas"
+        ],
+        "summary": "Atualiza uma categoria existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da categoria a ser atualizada.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Objeto com os dados atualizados da categoria.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Despesa"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "A categoria foi atualizada com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma categoria encontrada com o ID especificado."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Despesas"
+        ],
+        "summary": "Exclui uma categoria específica pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da categoria a ser excluída.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "A categoria foi marcada como excluída com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma categoria encontrada com o ID especificado."
           }
         }
       }
@@ -140,9 +338,13 @@
         "tags": [
           "Economias"
         ],
+        "summary": "Retorna as Economias cadastradas.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Economia encontrada."
+          },
+          "404": {
+            "description": "Economia não encontrada."
           }
         }
       },
@@ -150,7 +352,9 @@
         "tags": [
           "Economias"
         ],
+        "summary": "Cadastra uma nova economia.",
         "requestBody": {
+          "description": "Dados da economia.",
           "content": {
             "application/json": {
               "schema": {
@@ -172,6 +376,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "A economia foi criada com sucesso."
+          },
+          "400": {
+            "description": "Dados inválidos foram enviados na requisição."
+          },
+          "409": {
+            "description": "Já existe uma economia com o mesmo nome."
           }
         }
       }
@@ -181,10 +394,12 @@
         "tags": [
           "Economias"
         ],
+        "summary": "Retorna os detalhes de uma Economias específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da Economias.",
             "required": true,
             "schema": {
               "type": "string",
@@ -194,7 +409,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Economia encontrada."
+          },
+          "404": {
+            "description": "Economia não encontrada."
           }
         }
       },
@@ -202,10 +420,12 @@
         "tags": [
           "Economias"
         ],
+        "summary": "Atualiza uma economia existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da economia a ser atualizada.",
             "required": true,
             "schema": {
               "type": "string",
@@ -214,6 +434,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto com os dados atualizados da economia.",
           "content": {
             "application/json": {
               "schema": {
@@ -235,6 +456,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A economia foi atualizada com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma economia encontrada com o ID especificado."
           }
         }
       },
@@ -242,10 +469,12 @@
         "tags": [
           "Economias"
         ],
+        "summary": "Exclui uma economia específica pelo ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da economia a ser excluída.",
             "required": true,
             "schema": {
               "type": "string",
@@ -256,6 +485,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A economia foi marcada como excluída com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma economia encontrada com o ID especificado."
           }
         }
       }
@@ -265,9 +500,13 @@
         "tags": [
           "Receitas"
         ],
+        "summary": "Retorna as receitas cadastradas.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Receita encontrada."
+          },
+          "404": {
+            "description": "Receita não encontrada."
           }
         }
       },
@@ -275,7 +514,9 @@
         "tags": [
           "Receitas"
         ],
+        "summary": "Cadastra uma nova receita.",
         "requestBody": {
+          "description": "Dados da receita.",
           "content": {
             "application/json": {
               "schema": {
@@ -297,6 +538,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "A receita foi criada com sucesso."
+          },
+          "400": {
+            "description": "Dados inválidos foram enviados na requisição."
+          },
+          "409": {
+            "description": "Já existe uma receita com o mesmo nome."
           }
         }
       }
@@ -306,10 +556,12 @@
         "tags": [
           "Receitas"
         ],
+        "summary": "Retorna os detalhes de uma receita específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da receita.",
             "required": true,
             "schema": {
               "type": "string",
@@ -319,7 +571,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Receita encontrada."
+          },
+          "404": {
+            "description": "Receita não encontrada."
           }
         }
       },
@@ -327,10 +582,12 @@
         "tags": [
           "Receitas"
         ],
+        "summary": "Atualiza uma receita existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da receita a ser atualizada.",
             "required": true,
             "schema": {
               "type": "string",
@@ -339,6 +596,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto com os dados atualizados da receita.",
           "content": {
             "application/json": {
               "schema": {
@@ -360,6 +618,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A receita foi atualizada com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma receita encontrada com o ID especificado."
           }
         }
       },
@@ -367,10 +631,12 @@
         "tags": [
           "Receitas"
         ],
+        "summary": "Exclui uma receita específica pelo ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da receita a ser excluída.",
             "required": true,
             "schema": {
               "type": "string",
@@ -381,6 +647,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A receita foi marcada como excluída com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma receita encontrada com o ID especificado."
           }
         }
       }
@@ -390,9 +662,13 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Retorna as despesas cadastradas.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "despesa encontrada."
+          },
+          "404": {
+            "description": "despesa não encontrada."
           }
         }
       },
@@ -400,6 +676,7 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Cadastra uma nova despesa.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -422,6 +699,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "A despesa foi criada com sucesso."
+          },
+          "400": {
+            "description": "Dados inválidos foram enviados na requisição."
+          },
+          "409": {
+            "description": "Já existe uma despesa com o mesmo nome."
           }
         }
       }
@@ -431,10 +717,12 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Retorna os detalhes de uma despesa específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da despesa.",
             "required": true,
             "schema": {
               "type": "string",
@@ -444,7 +732,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "despesa encontrada."
+          },
+          "404": {
+            "description": "despesa não encontrada."
           }
         }
       },
@@ -452,10 +743,12 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Atualiza uma despesa existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da despesa a ser atualizada.",
             "required": true,
             "schema": {
               "type": "string",
@@ -464,6 +757,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto com os dados atualizados da despesa.",
           "content": {
             "application/json": {
               "schema": {
@@ -485,6 +779,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A despesa foi atualizada com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma despesa encontrada com o ID especificado."
           }
         }
       },
@@ -492,10 +792,12 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Exclui uma despesa específica pelo ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da despesa a ser excluída.",
             "required": true,
             "schema": {
               "type": "string",
@@ -506,6 +808,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "A despesa foi marcada como excluída com sucesso."
+          },
+          "404": {
+            "description": "Nenhuma despesa encontrada com o ID especificado."
           }
         }
       }
@@ -515,10 +823,12 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Associa uma receita existente a uma tag específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da tag que será associada à receita.",
             "required": true,
             "schema": {
               "type": "string",
@@ -528,6 +838,7 @@
           {
             "name": "receitaId",
             "in": "query",
+            "description": "ID da receita que será associada à tag.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -537,6 +848,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "Receita associada à tag com sucesso."
+          },
+          "404": {
+            "description": "A tag ou a receita especificada não foi encontrada."
+          },
+          "400": {
+            "description": "Dados inválidos ou inconsistentes foram enviados na requisição."
           }
         }
       }
@@ -546,10 +866,12 @@
         "tags": [
           "Tags"
         ],
+        "summary": "Associa uma despesa existente a uma tag específica.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID da tag que será associada à despesa.",
             "required": true,
             "schema": {
               "type": "string",
@@ -559,6 +881,7 @@
           {
             "name": "despesaId",
             "in": "query",
+            "description": "ID da despesa que será associada à tag.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -568,45 +891,15 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              }
-            }
+          },
+          "204": {
+            "description": "Despesa associada à tag com sucesso."
+          },
+          "404": {
+            "description": "A tag ou a despesa especificada não foi encontrada."
+          },
+          "400": {
+            "description": "Dados inválidos ou inconsistentes foram enviados na requisição."
           }
         }
       }
@@ -623,6 +916,39 @@
           },
           "nome": {
             "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Despesa": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "valor": {
+            "type": "number",
+            "format": "double"
+          },
+          "data": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoriaId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
             "nullable": true
           },
           "isDeleted": {
@@ -713,29 +1039,6 @@
               "type": "string",
               "format": "uuid"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
             "nullable": true
           }
         },
