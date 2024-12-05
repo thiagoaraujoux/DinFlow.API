@@ -28,7 +28,5 @@
 
 Os endpoints estão documentados no **Swagger**, acessível via `/swagger`.
 
-
-
-
-   
+![{AB7B10F4-0411-4787-AEA3-41A2C0B91403}](https://github.com/user-attachments/assets/bb9fc286-bb91-41c3-aa0f-6ab6cbf5c294)
+![{5CD94709-02D4-483A-B03D-CCDB6927758E}](https://github.com/user-attachments/assets/7dccbd81-160b-482b-8204-b8551cf88153)
