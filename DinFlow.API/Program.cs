@@ -13,12 +13,12 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1",
         new Microsoft.OpenApi.Models.OpenApiInfo
         {
-            Title = "Nosso Novo Título do Swagger",
-            Description = "Essa é a forma de fazermos uma nova descrição de nossa API",
+            Title = "DinFlow - API",
+            Description = "API com metodos para aplicação de controle financeiro",
             Contact = new Microsoft.OpenApi.Models.OpenApiContact
             {
-                Name = "API de Eventos do Leandro",
-                Email = "leandrogarcia@unitins.br",
+                Name = "API DINFLOW",
+                Email = "thiagoaraujo.unitins",
                 Url = new Uri("https://www.unitins.br/nPortal/")
             }
         });

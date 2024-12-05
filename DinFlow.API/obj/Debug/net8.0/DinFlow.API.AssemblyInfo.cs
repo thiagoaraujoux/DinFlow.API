@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DinFlow.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c719394e8ea56e667431531c1145245dc30e20e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DinFlow.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DinFlow.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
